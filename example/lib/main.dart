@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter_geetest/flutter_geetest.dart';
-
+import 'dart:io';
 import 'dart:convert';
-import 'package:http/http.dart' as http;
 
 void main() => runApp(MyApp());
 
@@ -23,8 +22,13 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
 
     Future<dynamic> api1() async {
-      http.Response response = await http.get('http://www.geetest.com/demo/gt/register-slide');
-      final Map<String, dynamic> responseData = json.decode(response.body);
+      var httpClient = HttpClient();
+
+      var request = await httpClient.getUrl(Uri.parse('http://www.geetest.com/demo/gt/register-slide'));
+
+      var response = await request.close();
+      var responseBody = await response.transform(Utf8Decoder()).join();
+      Map responseData = json.decode(responseBody);
       if (responseData['success'] == 1) {
         return responseData;
       } else {
@@ -46,11 +50,15 @@ class _MyAppState extends State<MyApp> {
       data.forEach((dynamic key, dynamic value) {
         bodyString += "$key=$value&";
       });
-
-      http.Response response = await http.post('http://www.geetest.com/demo/gt/validate-slide',
-          headers: {'AHost':'gameCenter', 'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8d'},
-          body: utf8.encode(bodyString), encoding: Utf8Codec());
-      final Map<String, dynamic> responseData = json.decode(response.body);
+      var httpClient = HttpClient();
+      var request = await httpClient.postUrl(Uri.parse('http://www.geetest.com/demo/gt/validate-slide'));
+      request.headers.set('content-type', 'application/x-www-form-urlencoded');
+      request.add(utf8.encode(bodyString));
+      var response = await request.close();
+      var responseBody = await response.transform(Utf8Decoder()).join();
+      print(responseBody);
+      Map responseData = json.decode(responseBody);
+      print(responseData);
       if (responseData['status'] == 'success') {
         return true;
       } else {
