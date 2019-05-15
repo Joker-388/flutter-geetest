@@ -2,6 +2,14 @@
 
 可以在flutter上面使用极验行为验证框架
 
+## 集成
+
+```dart
+dependencies:
+  flutter_geetest:
+    git: https://github.com/Joker-388/flutter-geetest.git
+```
+
 ## 接口
 
 ```dart
