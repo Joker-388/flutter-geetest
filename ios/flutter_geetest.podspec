@@ -11,12 +11,14 @@ A new Flutter plugin.
   s.homepage         = 'http://example.com'
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Your Company' => 'email@example.com' }
-  s.source           = { :path => '../GT3Captcha.framework' }
+
+  s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
+
+  s.dependency 'GT3Captcha'
   s.dependency 'Flutter'
-  s.vendored_frameworks = 'GT3Captcha.framework'
-  
+  s.requires_arc = true
   s.ios.deployment_target = '8.0'
 end
 

@@ -7,8 +7,82 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06083510-db5f-46d9-81b1-132d32f1fb40" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/ios/Classes/JKRGeeManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/ios/Classes/JKRGeeManager.m" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Classes/JKRGeeManager.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Classes/JKRGeeManager.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/example/ios/GT3Captcha.bundle/Assets.car" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/example/ios/GT3Captcha.bundle/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/example/ios/GT3Captcha.bundle/ar.lproj/GT3Captcha.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/example/ios/GT3Captcha.bundle/de.lproj/GT3Captcha.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/example/ios/GT3Captcha.bundle/en.lproj/GT3Captcha.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/example/ios/GT3Captcha.bundle/es.lproj/GT3Captcha.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/example/ios/GT3Captcha.bundle/fr.lproj/GT3Captcha.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/example/ios/GT3Captcha.bundle/id.lproj/GT3Captcha.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/example/ios/GT3Captcha.bundle/ja.lproj/GT3Captcha.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/example/ios/GT3Captcha.bundle/ko.lproj/GT3Captcha.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/example/ios/GT3Captcha.bundle/pt-PT.lproj/GT3Captcha.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/example/ios/GT3Captcha.bundle/resource.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/example/ios/GT3Captcha.bundle/ru.lproj/GT3Captcha.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/example/ios/GT3Captcha.bundle/zh-CN.lproj/GT3Captcha.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/example/ios/GT3Captcha.bundle/zh-HK.lproj/GT3Captcha.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/example/ios/GT3Captcha.bundle/zh-TW.lproj/GT3Captcha.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/example/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/example/ios/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/ios/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/ios/Classes/FlutterGeetestPlugin.m" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/ios/Classes/FlutterGeetestPlugin.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/ios/GT3Captcha.framework/GT3Captcha" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/ios/GT3Captcha.framework/Headers/GT3Captcha.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/ios/GT3Captcha.framework/Headers/GT3CaptchaButton.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/ios/GT3Captcha.framework/Headers/GT3CaptchaManager.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/ios/GT3Captcha.framework/Headers/GT3Error.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/ios/GT3Captcha.framework/Headers/GT3Utils.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/ios/GT3Captcha.framework/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/ios/GT3Captcha.framework/Modules/module.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/ios/flutter_geetest.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/ios/flutter_geetest.podspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/lib/flutter_geetest.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/lib/flutter_geetest.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/flutter_geetest/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/GT3Captcha.bundle/Assets.car" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/GT3Captcha.bundle/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/GT3Captcha.bundle/ar.lproj/GT3Captcha.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/GT3Captcha.bundle/de.lproj/GT3Captcha.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/GT3Captcha.bundle/en.lproj/GT3Captcha.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/GT3Captcha.bundle/es.lproj/GT3Captcha.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/GT3Captcha.bundle/fr.lproj/GT3Captcha.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/GT3Captcha.bundle/id.lproj/GT3Captcha.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/GT3Captcha.bundle/ja.lproj/GT3Captcha.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/GT3Captcha.bundle/ko.lproj/GT3Captcha.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/GT3Captcha.bundle/pt-PT.lproj/GT3Captcha.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/GT3Captcha.bundle/resource.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/GT3Captcha.bundle/ru.lproj/GT3Captcha.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/GT3Captcha.bundle/zh-CN.lproj/GT3Captcha.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/GT3Captcha.bundle/zh-HK.lproj/GT3Captcha.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/GT3Captcha.bundle/zh-TW.lproj/GT3Captcha.strings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/FlutterGeetestPlugin.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/FlutterGeetestPlugin.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/GT3Captcha.framework/GT3Captcha" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/GT3Captcha.framework/Headers/GT3Captcha.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/GT3Captcha.framework/Headers/GT3CaptchaButton.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/GT3Captcha.framework/Headers/GT3CaptchaManager.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/GT3Captcha.framework/Headers/GT3Error.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/GT3Captcha.framework/Headers/GT3Utils.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/GT3Captcha.framework/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/GT3Captcha.framework/Modules/module.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/flutter_geetest.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/ios/flutter_geetest.podspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/flutter_geetest.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutter_geetest.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -22,46 +96,93 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DockManager">
+    <window id="2">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/lib/flutter_geetest.dart">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="105">
+                    <caret line="7" selection-start-line="7" selection-end-line="11" selection-end-column="3" />
+                    <folding>
+                      <element signature="e#0#20#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="433">
+                    <caret line="152" column="40" lean-forward="true" selection-start-line="151" selection-start-column="6" selection-end-line="152" selection-end-column="40" />
+                    <folding>
+                      <element signature="e#0#39#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pubspec.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="420">
+              <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../flutter/bin/cache/pkg/sky_engine/lib/_http/http.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="563">
-              <caret line="99" column="5" lean-forward="true" selection-start-line="68" selection-start-column="4" selection-end-line="99" selection-end-column="5" />
+            <state relative-caret-position="78">
+              <caret line="1504" column="5" selection-start-line="1504" selection-start-column="5" selection-end-line="1504" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/build.gradle">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/android/app/src/main/java/com/example/flutter_geetest_example/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
               <folding>
-                <element signature="e#0#39#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+        <entry file="file://$PROJECT_DIR$/android/gradle.properties">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.metadata">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.packages">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="15" lean-forward="true" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/local.properties">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -71,20 +192,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LICENSE">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pubspec.lock">
+        <entry file="file://$PROJECT_DIR$/android/settings.gradle">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="74" selection-start-line="19" selection-start-column="74" selection-end-line="19" selection-end-column="74" />
+            <state relative-caret-position="878">
+              <caret line="71" column="12" lean-forward="true" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -117,19 +233,22 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/example/lib/home.dart" />
-        <option value="$PROJECT_DIR$/ios/flutter_geetest.podspec" />
         <option value="$PROJECT_DIR$/ios/Classes/FlutterGeetestPlugin.m" />
         <option value="$PROJECT_DIR$/example/pubspec.yaml" />
-        <option value="$PROJECT_DIR$/example/lib/main.dart" />
         <option value="$PROJECT_DIR$/example/README.md" />
-        <option value="$PROJECT_DIR$/lib/flutter_geetest.dart" />
-        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/ios/flutter_geetest.podspec" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/pubspec.lock" />
+        <option value="$PROJECT_DIR$/example/android/app/src/main/java/com/example/flutter_geetest_example/MainActivity.java" />
+        <option value="$PROJECT_DIR$/lib/flutter_geetest.dart" />
+        <option value="$PROJECT_DIR$/example/lib/main.dart" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/CHANGELOG.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="947" />
+    <option name="x" value="553" />
     <option name="y" value="23" />
     <option name="width" value="1422" />
     <option name="height" value="1031" />
@@ -156,13 +275,12 @@
               <item name="flutter-geetest" type="b2602c69:ProjectViewProjectNode" />
               <item name="flutter-geetest" type="462c0819:PsiDirectoryNode" />
               <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flutter-geetest" type="b2602c69:ProjectViewProjectNode" />
               <item name="flutter-geetest" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="ios" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flutter-geetest" type="b2602c69:ProjectViewProjectNode" />
@@ -174,18 +292,20 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ios" />
       <recent name="$PROJECT_DIR$/example/lib" />
     </key>
   </component>
@@ -224,7 +344,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="947" y="23" width="1422" height="1031" extended-state="0" />
+    <frame x="553" y="23" width="1422" height="1031" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2057971" />
@@ -237,12 +357,12 @@
       <window_info id="Capture Tool" order="7" />
       <window_info id="Favorites" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Dart Analysis" order="0" weight="0.3290735" />
-      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.49927327" weight="0.29499468" />
+      <window_info anchor="bottom" id="Run" order="1" sideWeight="0.49927327" visible="true" weight="0.24174654" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.3290735" />
       <window_info anchor="bottom" id="Android Profiler" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Logcat" order="4" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.3290735" />
-      <window_info anchor="bottom" id="Terminal" order="6" visible="true" weight="0.2140575" />
+      <window_info anchor="bottom" id="Terminal" order="6" weight="0.2140575" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50072676" side_tool="true" weight="0.4115822" />
       <window_info anchor="bottom" id="Flutter Performance" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
@@ -307,13 +427,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example/lib/dio_manager.dart" />
-    <entry file="file://$PROJECT_DIR$/ios/flutter_geetest.podspec">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../flutter/.pub-cache/hosted/pub.flutter-io.cn/dio-1.0.17/lib/dio.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -439,13 +552,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../flutter/bin/cache/pkg/sky_engine/lib/_http/http.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="686" column="7" selection-start-line="686" selection-start-column="7" selection-end-line="686" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../flutter/bin/cache/pkg/sky_engine/lib/io/io_sink.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
@@ -481,16 +587,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/flutter_geetest.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="98" selection-start-line="20" selection-start-column="83" selection-end-line="20" selection-end-column="98" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -500,39 +596,106 @@
     <entry file="file://$PROJECT_DIR$/.packages">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
+    <entry file="file://$PROJECT_DIR$/ios/test.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/LICENSE">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/ios/flutter_geetest.podspec">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="74" selection-start-line="19" selection-start-column="74" selection-end-line="19" selection-end-column="74" />
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pubspec.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="10" lean-forward="true" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/gradle.properties">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/flutter_geetest.iml">
+    <entry file="file://$PROJECT_DIR$/android/local.properties">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/android/app/src/main/java/com/example/flutter_geetest_example/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/build.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/flutter_geetest_android.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../flutter/bin/cache/pkg/sky_engine/lib/_http/http.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="1504" column="5" selection-start-line="1504" selection-start-column="5" selection-end-line="1504" selection-end-column="5" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pubspec.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="420">
+          <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/flutter_geetest.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="11" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
-          <caret line="99" column="5" lean-forward="true" selection-start-line="68" selection-start-column="4" selection-end-line="99" selection-end-column="5" />
+        <state relative-caret-position="433">
+          <caret line="152" column="40" lean-forward="true" selection-start-line="151" selection-start-column="6" selection-end-line="152" selection-end-column="40" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="878">
+          <caret line="71" column="12" lean-forward="true" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flutter_geetest.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="15" lean-forward="true" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
         </state>
       </provider>
     </entry>

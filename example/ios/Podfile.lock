@@ -2,10 +2,16 @@ PODS:
   - Flutter (1.0.0)
   - flutter_geetest (0.0.1):
     - Flutter
+    - GT3Captcha
+  - GT3Captcha (0.1.3)
 
 DEPENDENCIES:
   - Flutter (from `.symlinks/flutter/ios`)
   - flutter_geetest (from `.symlinks/plugins/flutter_geetest/ios`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - GT3Captcha
 
 EXTERNAL SOURCES:
   Flutter:
@@ -15,7 +21,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
-  flutter_geetest: 92a8ec9f921b52ddda550bec3e9a8fc0b347598d
+  flutter_geetest: 9d6621a811a817f0ab5c06bcbfcd59bab1f95692
+  GT3Captcha: c4977b01a99691726f544955ae04b71a6bd27e60
 
 PODFILE CHECKSUM: aff02bfeed411c636180d6812254b2daeea14d09
 

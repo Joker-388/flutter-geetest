@@ -23,7 +23,6 @@
 		F3542D9D22894D93003EAF49 /* GT3Captcha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3542D9C22894D93003EAF49 /* GT3Captcha.framework */; };
 		F3542DA622897721003EAF49 /* StarRocket_China.cer in Resources */ = {isa = PBXBuildFile; fileRef = F3542DA422897721003EAF49 /* StarRocket_China.cer */; };
 		F3542DA722897721003EAF49 /* StarRocket.cer in Resources */ = {isa = PBXBuildFile; fileRef = F3542DA522897721003EAF49 /* StarRocket.cer */; };
-		F3542DDB228AA775003EAF49 /* GT3Captcha.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F3542DDA228AA775003EAF49 /* GT3Captcha.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -65,7 +64,6 @@
 		F3542D9C22894D93003EAF49 /* GT3Captcha.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GT3Captcha.framework; path = ../../ios/GT3Captcha.framework; sourceTree = "<group>"; };
 		F3542DA422897721003EAF49 /* StarRocket_China.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = StarRocket_China.cer; sourceTree = "<group>"; };
 		F3542DA522897721003EAF49 /* StarRocket.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = StarRocket.cer; sourceTree = "<group>"; };
-		F3542DDA228AA775003EAF49 /* GT3Captcha.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GT3Captcha.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +93,6 @@
 		9740EEB11CF90186004384FC /* Flutter */ = {
 			isa = PBXGroup;
 			children = (
-				F3542DDA228AA775003EAF49 /* GT3Captcha.bundle */,
 				F3542DA422897721003EAF49 /* StarRocket_China.cer */,
 				F3542DA522897721003EAF49 /* StarRocket.cer */,
 				3B80C3931E831B6300D905FE /* App.framework */,
@@ -176,6 +173,7 @@
 				9705A1C41CF9048500538489 /* Embed Frameworks */,
 				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
 				5C437633BE3726B55CAB3F37 /* [CP] Embed Pods Frameworks */,
+				B09878DF0E71480C6E47DD9D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -227,7 +225,6 @@
 				F3542DA722897721003EAF49 /* StarRocket.cer in Resources */,
 				97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */,
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
-				F3542DDB228AA775003EAF49 /* GT3Captcha.bundle in Resources */,
 				9740EEB41CF90195004384FC /* Debug.xcconfig in Resources */,
 				97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */,
 				F3542DA622897721003EAF49 /* StarRocket_China.cer in Resources */,
@@ -304,6 +301,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B09878DF0E71480C6E47DD9D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-resources.sh",
+				"${PODS_ROOT}/GT3Captcha/ios/GT3Captcha.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GT3Captcha.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

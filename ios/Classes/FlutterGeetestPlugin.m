@@ -1,14 +1,12 @@
 #import "FlutterGeetestPlugin.h"
-#import <GT3Captcha/GT3Captcha.h>
+#import "JKRGeeManager.h"
 
-@interface FlutterGeetestPlugin ()<GT3CaptchaManagerDelegate, GT3CaptchaManagerViewDelegate>
+@interface FlutterGeetestPlugin ()
 
 @end
 
-@implementation FlutterGeetestPlugin {
-    FlutterResult _result;
-    GT3CaptchaManager *_manager;
-}
+@implementation FlutterGeetestPlugin
+
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
   FlutterMethodChannel* channel = [FlutterMethodChannel
       methodChannelWithName:@"flutter_geetest"
@@ -19,66 +17,19 @@
 
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
   if ([@"getPlatformVersion" isEqualToString:call.method]) {
-    result([@"iOS " stringByAppendingString:[[UIDevice currentDevice] systemVersion]]);
+      [[JKRGeeManager sharedManager] geetestVersionWithResult:result];
   } else if([@"initGeeTest" isEqualToString:call.method]) {
-      if (!_manager) {
-          _manager = [[GT3CaptchaManager alloc] initWithAPI1:nil API2:nil timeout:8.0];
-          [_manager useLanguage:GT3LANGTYPE_ZH_CN];
-          _manager.delegate = self;
-          _manager.viewDelegate = self;
-          [_manager registerCaptcha:nil];
-          [_manager useVisualViewWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
-      }
-      result(nil);
+      NSDictionary *arguments = [call arguments];
+      [[JKRGeeManager sharedManager] initGeeManagerWithApi1:arguments[@"api1"] api2:arguments[@"api2"]  customRegisterAPI:[arguments[@"customRegisterAPI"] boolValue]  customSecondaryValidate:[arguments[@"customSecondaryValidate"] boolValue]  result:result];
   }  else if([@"configureGeeTest" isEqualToString:call.method]) {
       NSDictionary *arguments = [call arguments];
-      [_manager configureGTest:arguments[@"gt_public_key"] challenge:arguments[@"gt_challenge"] success:arguments[@"gt_success_code"] withAPI2:nil];
-      result(nil);
+      [[JKRGeeManager sharedManager] configGeeTestWithPublic_key:arguments[@"public_key"] challenge:arguments[@"challenge"] success_code:arguments[@"success_code"] api2:arguments[@"api2"] result:result];
   } else if([@"startGTCaptcha" isEqualToString:call.method]) {
       NSDictionary *arguments = [call arguments];
-      if (!_manager) {
-          result(nil);
-      } else {
-          _result = result;
-          [_manager startGTCaptchaWithAnimated:[arguments[@"animation"] boolValue]];
-      }
+      [[JKRGeeManager sharedManager] startGTCaptchaWithAnimated:[arguments[@"animation"] boolValue] result:result];
   } else {
     result(FlutterMethodNotImplemented);
   }
-}
-
-/// 验证错误处理
-- (void)gtCaptcha:(GT3CaptchaManager *)manager errorHandler:(GT3Error *)error {
-    _result(nil);
-}
-
-/// 通知已经收到二次验证结果, 在此处理最终验证结果
-- (void)gtCaptcha:(GT3CaptchaManager *)manager didReceiveSecondaryCaptchaData:(NSData *)data response:(NSURLResponse *)response error:(GT3Error *)error decisionHandler:(void (^)(GT3SecondaryCaptchaPolicy))decisionHandler {
-
-}
-
-/// 用户主动关闭了验证码界面
-- (void)gtCaptchaUserDidCloseGTView:(GT3CaptchaManager *)manager {
-    _result(nil);
-}
-
-/// 验证初始化方法
-- (void)gtCaptcha:(GT3CaptchaManager *)manager willSendSecondaryCaptchaRequest:(NSURLRequest *)originalRequest withReplacedRequest:(void (^)(NSMutableURLRequest * request))replacedRequest {
-
-}
-
-- (BOOL)shouldUseDefaultRegisterAPI:(GT3CaptchaManager *)manager {
-    return NO;
-}
-
-- (BOOL)shouldUseDefaultSecondaryValidate:(GT3CaptchaManager *)manager {
-    return NO;
-}
-
-- (void)gtCaptcha:(GT3CaptchaManager *)manager didReceiveCaptchaCode:(NSString *)code result:(NSDictionary *)result message:(NSString *)message {
-    if (code.integerValue == 1) {
-        _result(result);
-    }
 }
 
 @end

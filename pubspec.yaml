@@ -1,6 +1,6 @@
 name: flutter_geetest
 description: A new Flutter plugin.
-version: 0.0.2
+version: 0.0.3
 author: Joker-388<rainbow0106@qq.com>
 homepage: https://github.com/Joker-388/flutter-geetest
 
@@ -27,4 +27,5 @@ flutter:
   plugin:
     androidPackage: com.example.flutter_geetest
     pluginClass: FlutterGeetestPlugin
+
 
