@@ -2,7 +2,7 @@
 
 可以在flutter上面使用极验行为验证框架，支持原生极验的自定义配置功能，支持自定义api1步骤、api2步骤、全部使用极验默认流程三种方式。
 
-[![preview](https://github.com/Joker-388/flutter-geetest/blob/master/preImage.gif)](http://www.jianshu.com/u/95d5ea0acd19)&nbsp;
+[![preview](https://github.com/Joker-388/flutter-geetest/blob/master/geetest.gif)](http://www.jianshu.com/u/95d5ea0acd19)&nbsp;
 
 ## 集成
 
