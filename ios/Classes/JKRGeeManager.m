@@ -34,37 +34,29 @@
     result(version);
 }
 
-- (void)initGeeManagerWithApi1:(NSString *)api1 api2:(NSString *)api2 customRegisterAPI:(BOOL)customRegisterAPI customSecondaryValidate:(BOOL)customSecondaryValidate result:(FlutterResult)result{
+- (void)launchGeetestWithApi1:(NSString *)api1 api2:(NSString *)api2 challenge:(NSString *)challenge gt:(NSString *)gt success:(NSNumber *)success result:(nonnull FlutterResult)result{
+    if (!api1.length && (!challenge.length || !gt.length || success.integerValue == -1)) {
+        result([self dataToJsonString:@{@"msg":@"params error"}]);
+        return;
+    }
+    _result = result;
+    self.customRegisterAPI = !api1.length;
+    self.customSecondaryValidate = !api2.length;
+    [self initGeeManagerWithApi1:api1 api2:api2];
+    if (!api1.length) {
+        [self configGeeTestWithPublic_key:gt challenge:challenge success_code:success api2:api2];
+    }
+    [self.manager startGTCaptchaWithAnimated:YES];
+}
+
+- (void)initGeeManagerWithApi1:(NSString *)api1 api2:(NSString *)api2 {
     self.manager = [[GT3CaptchaManager alloc] initWithAPI1:api1 ? api1 : @"" API2:api2 ? api2 : @"" timeout:8];
     self.manager.delegate = self;
     [self.manager registerCaptcha:nil];
-    self.customRegisterAPI = customRegisterAPI;
-    self.customSecondaryValidate = customSecondaryValidate;
-    if (self.manager) {
-        result(@YES);
-    } else {
-        result(@NO);
-    }
 }
 
-- (void)configGeeTestWithPublic_key:(NSString *)public_key challenge:(NSString *)challenge success_code:(NSString *)success_code api2:(NSString *)api2 result:(FlutterResult)result {
-    if (![self checkIfInitManagerWithResult:result]) return;
+- (void)configGeeTestWithPublic_key:(NSString *)public_key challenge:(NSString *)challenge success_code:(NSNumber *)success_code api2:(NSString *)api2 {
     [self.manager configureGTest:public_key challenge:challenge success:[NSNumber numberWithInteger:success_code.integerValue] withAPI2:api2 ? api2 : @""];
-    result(@YES);
-}
-
-- (void)startGTCaptchaWithAnimated:(BOOL)animated result:(FlutterResult)result {
-    if (![self checkIfInitManagerWithResult:result]) return;
-    [self.manager startGTCaptchaWithAnimated:animated];
-    _result = result;
-}
-
-- (BOOL)checkIfInitManagerWithResult:(FlutterResult)result{
-    if (!self.manager) {
-        result(@NO);
-        return NO;
-    }
-    return YES;
 }
 
 - (BOOL)shouldUseDefaultRegisterAPI:(GT3CaptchaManager *)manager {
@@ -76,12 +68,12 @@
 }
 
 - (void)gtCaptchaUserDidCloseGTView:(GT3CaptchaManager *)manager {
-    if(_result) _result(nil);
+    if(_result) _result([self dataToJsonString:@{@"msg":@"user close gtview and cancel"}]);
     _result = nil;
 }
 
 - (void)gtCaptcha:(GT3CaptchaManager *)manager errorHandler:(GT3Error *)error {
-    if(_result) _result(nil);
+    if(_result) _result([self dataToJsonString:@{@"msg":[NSString stringWithFormat:@"gaptcha error:%zd %@", error.code, error.localizedDescription]}]);
     _result = nil;
 }
 
@@ -97,7 +89,13 @@
     // 不自定义api1，自定义api2的时候，这里需要拦截，全部都自定义的时候，这里也需要拦截
     if (code.integerValue == 1) {
         [self.manager closeGTViewIfIsOpen];
-        if(_result) _result(result);
+        if(_result) _result([self dataToJsonString:@{
+                                                     @"data":@{
+                                                             @"geetest_challenge":result[@"geetest_challenge"],
+                                                             @"geetest_seccode":result[@"geetest_seccode"],
+                                                             @"geetest_validate":result[@"geetest_validate"]
+                                                             }
+                                                     }]);
         _result = nil;
     }
 }
@@ -109,18 +107,33 @@
         NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&err];
         if (!err) {
             decisionHandler(GT3SecondaryCaptchaPolicyAllow);
-            if(_result) _result(dict);
+            if(_result) _result([self dataToJsonString:@{@"data":dict}]);
             _result = nil;
         } else {
             decisionHandler(GT3SecondaryCaptchaPolicyForbidden);
-            if(_result) _result(nil);
+            if(_result) _result([self dataToJsonString:@{@"msg":[NSString stringWithFormat:@"gaptcha error:%zd %@ data:%@", error.code, error.localizedDescription, dict]}]);
+            
             _result = nil;
         }
     } else {
         decisionHandler(GT3SecondaryCaptchaPolicyForbidden);
-        if(_result) _result(nil);
+        if(_result) _result([self dataToJsonString:@{@"msg":[NSString stringWithFormat:@"gaptcha error:%zd %@", error.code, error.localizedDescription]}]);
         _result = nil;
     }
+}
+
+- (NSString*)dataToJsonString:(id)object {
+    NSString *jsonString = nil;
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:object
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    if (!jsonData) {
+        NSLog(@"Got an error: %@", error);
+    } else {
+        jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+    return jsonString;
 }
 
 @end

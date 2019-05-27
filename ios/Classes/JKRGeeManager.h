@@ -15,9 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)sharedManager;
 
 - (void)geetestVersionWithResult:(FlutterResult)result;
-- (void)initGeeManagerWithApi1:(NSString *)api1 api2:(NSString *)api2 customRegisterAPI:(BOOL)customRegisterAPI customSecondaryValidate:(BOOL)customSecondaryValidate result:(FlutterResult)result;
-- (void)configGeeTestWithPublic_key:(NSString *)public_key challenge:(NSString *)challenge success_code:(NSString *)success_code api2:(NSString *)api2 result:(FlutterResult)result;
-- (void)startGTCaptchaWithAnimated:(BOOL)animated result:(FlutterResult)result;
+- (void)launchGeetestWithApi1:(NSString *)api1 api2:(NSString *)api2 challenge:(NSString *)challenge gt:(NSString *)gt success:(NSNumber *)success result:(FlutterResult)result;;
 
 @end
 
