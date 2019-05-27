@@ -53,12 +53,9 @@ class GeetestPluginHelper {
         return GT3GeetestUtils.getVersion();
     }
 
-    //    private MethodChannel.Result mResult;
     private String mApi2;
 
-    //场景1(代处理接口模式): api1,api2都不为空，使用SDK处理，api1请求获取json(包含gt,challenge,success)启动弹窗验证，完成后请求api2二次验证，完成后回调
-    //场景2(自处理接口模式)：gt,challenge,success都不为空，SDK启动弹窗验证，完成后返回进行要求二次验证
-    //场景3：api1,api2之一为空字符串，则校验场景2，场景2仍然存在空字符串，返回失败提示参数异常信息
+    // return {"msg":"xxxx", data:{"xxx":"xxx"}};
     void launchGeetest(final String api1, String api2, String gt, String challenge, int success, final MethodChannel.Result result) {
         try {
             if(mActivity == null) {
@@ -66,7 +63,6 @@ class GeetestPluginHelper {
                 return;
             }
             gt3GeetestUtils = new GT3GeetestUtils(mActivity);
-            //            this.mResult = result;
             this.mApi2 = api2;
             //api1 不为空，SDK代处理api1的请求
             if(api1 != null && api1.length() > 0) {
@@ -104,7 +100,6 @@ class GeetestPluginHelper {
                 initConfigBean(result);
                 //直接拉起弹窗
                 // SDK可识别格式为 {"success":1,"challenge":"06fbb267def3c3c9530d62aa2d56d018","gt":"019924a82c70bb123aae90d483087f94"}
-                new JSONObject();
                 try {
                     JSONObject parmas = new JSONObject();
                     parmas.put("gt", gt);
@@ -177,41 +172,15 @@ class GeetestPluginHelper {
                                 @Override
                                 public void run() {
                                     mLoading.dismiss(); mLoading = null;
-                                    if(!TextUtils.isEmpty(api2Result)) {
-                                        try {
-                                            JSONObject jsonObject = new JSONObject(api2Result);
-                                            String     status     = jsonObject.getString("status");
-                                            if("success".equals(status)) {
-                                                gt3GeetestUtils.showSuccessDialog();
-                                                resultCallback.success(successString(null, null, null));
-                                            } else {
-                                                gt3GeetestUtils.showFailedDialog();
-                                                resultCallback.success(errorString(jsonObject.toString()));
-                                            }
-                                        } catch(Exception e) {
-                                            gt3GeetestUtils.showFailedDialog();
-                                            resultCallback.success(errorString(e.getMessage()));
-                                        }
-                                    } else {
-                                        gt3GeetestUtils.showFailedDialog();
-                                        resultCallback.success(errorString("api2 request error."));
-                                    }
+                                    gt3GeetestUtils.showSuccessDialog();
+                                    resultCallback.success(successString(api2Result));
                                 }
                             });
                         }
                     }).start();
                 } else {
-                    try {
-                        JSONObject jsonObject       = new JSONObject(result);
-                        String     geetestChallenge = jsonObject.getString("geetest_challenge");
-                        String     geetestSeccode   = jsonObject.getString("geetest_seccode");
-                        String     geetestValidate  = jsonObject.getString("geetest_validate");
-                        gt3GeetestUtils.showSuccessDialog();
-                        resultCallback.success(successString(geetestChallenge, geetestSeccode, geetestValidate));
-                    } catch(Exception e) {
-                        gt3GeetestUtils.showFailedDialog();
-                        resultCallback.success(errorString("验证结果参数错误. e:"+e.getMessage()));
-                    }
+                    gt3GeetestUtils.showSuccessDialog();
+                    resultCallback.success(successString(result));
                 }
             }
 
@@ -265,24 +234,23 @@ class GeetestPluginHelper {
         gt3GeetestUtils.startCustomFlow();
     }
 
-
+    // return {"msg":"xxxx", data:{"xxx":"xxx"}};
     private String errorString(String msg) {
         try {
             JSONObject result = new JSONObject();
-            result.put("code", 3);
             result.put("msg", msg);
+            result.put("data", null);
             return result.toString();
         } catch(Exception ignored) {}
         return "";
     }
 
-    private String successString(String geetest_challenge, String geetest_seccode, String geetest_validate) {
+    // return {"msg":"xxxx", data:{"xxx":"xxx"}};
+    private String successString(String datas) {
         try {
             JSONObject result = new JSONObject();
-            result.put("code", 2);
-            if(!TextUtils.isEmpty(geetest_challenge)) result.put("geetest_challenge", geetest_challenge);
-            if(!TextUtils.isEmpty(geetest_seccode)) result.put("geetest_seccode", geetest_seccode);
-            if(!TextUtils.isEmpty(geetest_validate)) result.put("geetest_validate", geetest_validate);
+            result.put("msg", "");
+            result.put("data", datas);
             return result.toString();
         } catch(Exception ignored) {}
         return "";

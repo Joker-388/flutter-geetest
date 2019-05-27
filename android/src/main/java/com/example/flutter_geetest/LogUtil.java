@@ -11,7 +11,7 @@ import android.util.Log;
 class LogUtil {
     private static final String TAG = "Flutter_GeetestPlugin";
 
-    static boolean DEBUG_ENABLE = BuildConfig.DEBUG;
+    private static boolean DEBUG_ENABLE = BuildConfig.DEBUG;
 
     static void log(String msg) {
         if(DEBUG_ENABLE) Log.d(TAG, msg);
