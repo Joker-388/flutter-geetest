@@ -15,60 +15,33 @@ dependencies:
 ## 接口
 
 ```dart
-  /// 极验sdk版本
-  static Future<String> skdVersion() async {
-    final String version = await _channel.invokeMethod('getPlatformVersion');
-    return version;
-  }
+   /// 极验sdk版本
+   static Future<String> skdVersion() async {
+     final String version = await _channel.invokeMethod('getPlatformVersion');
+     return version;
+   }
   
-   /// 初始化极验
-   /// String [api1]: 注册接口，如果自定义注册步骤，可以忽略，否则必须传。
-   /// String [api2]: 二次验证接口，如果自定义二次验证步骤，可以忽略，否则必须传。
-   /// bool [customRegisterAPI]: 默认true，是否自定义注册步骤。如果需要使用极验默认的注册步骤，必须传false。
-   /// bool [customSecondaryValidate]:  默认true，是否自定义二次验证步骤。如果需要使用极验默认的二次验证步骤，必须传false。
-  static Future<bool> initGeeTest({String api1 = "", String api2 = "", bool customRegisterAPI = true, bool customSecondaryValidate = true}) async {
-    var result = await _channel.invokeMethod(
-        'initGeeTest',
-        {
-          'api1':api1,
-          'api2':api2,
-          'customRegisterAPI':customRegisterAPI,
-          'customSecondaryValidate':customSecondaryValidate
-        }
-    );
-    return result;
-  }
-
-  /// 配置极验
-  /// 如果自定义注册步骤，必须调用此接口，将api1接口返回的相应字段传入。
-  /// String [publicKey]: 来自api1接口返回。
-  /// String [challenge]: 来自api1接口返回。
-  /// String [successCode]: 来自api1接口返回。
-  /// String [api2]: 如果需要使用极验默认的二次验证，必须传入api2。如果使用自定义的二次验证，忽略参数。
-  static Future configureGeeTest(String publicKey, String challenge, String successCode, {String api2 = ""}) async {
-    var result = await _channel.invokeMethod(
-        'configureGeeTest',
-        {
-          'public_key':publicKey,
-          'challenge':challenge,
-          'success_code':successCode,
-          'api2':api2,
-        }
-    );
-    return result;
-  }
-
-  /// 开始验证
-  /// bool [animation]: 是否使用动画
-  static Future<dynamic> startGTCaptcha({bool animation = true}) async {
-    var result = await _channel.invokeMethod(
-        'startGTCaptcha',
-        {
-          'animation':animation,
-        }
-    );
-    return result;
-  }
+    /// 启动极验 <br></br>
+    /// String [api1]: api1,SDK代处理的第一次验证接口 <br></br>
+    /// String [api2]: api2,SDK代处理的第二次验证接口 <br></br>
+    /// String [gt]: gt，自行处理api1获取的参数 <br></br>
+    /// String [challenge]: challenge，自行处理api1获取的参数 <br></br>
+    /// String [success]: success，自行处理api1获取的参数 <br></br>
+    /// <br></br>
+    /// {"msg":"xxxx", data:{"xxx":"xxx"}};
+  
+    static Future<Map<String, dynamic>> launchGeetest({String api1 = "", String api2 = "", String gt = "", String challenge = "", int success = -1}) async {
+  
+      var result = await _channel.invokeMethod('launchGeetest', {
+        'api1': api1,
+        'api2': api2,
+        'gt': gt,
+        'challenge': challenge,
+        'success': success,
+      });
+      return json.decode(result);
+    }
+  
 ```
 
 ## 获取极验sdk版本
@@ -81,126 +54,94 @@ print("Geetest version $version");
 ## 使用极验默认验证
 
 ```dart
-    void geeTestDefault() async {
-      await FlutterGeetest.initGeeTest(api1: 'http://www.geetest.com/demo/gt/register-slide', api2: 'http://www.geetest.com/demo/gt/validate-slide', customRegisterAPI: false, customSecondaryValidate: false);
-      var api2Result = await FlutterGeetest.startGTCaptcha();
-      // 取决于服务器返回的数据，约定的成功字段是否满足
-      print(api2Result);
-      if (api2Result['status'] == 'success') {
-        print("验证成功 $api2Result");
-      } else {
-        print('验证失败');
+  /// api1+api2
+  void _launchGeetest3() {
+    FlutterGeetest.launchGeetest(
+      api1: 'https://www.geetest.com/demo/gt/register-slide',
+      api2: 'https://www.geetest.com/demo/gt/validate-slide',
+    ).then((data) {
+      print('Flutter_GeetestPlugin: data====>$data');
+      if (data["data"] == null) {
+        String errormsg = data["msg"];
+        _showSnackbarMsg('$errormsg');
+        return;
       }
-    }
+      var result = data["data"];
+      _showSnackbarMsg('$result');
+    });
+  }
 ```
 
 ## 自定义 注册步骤，使用默认二次验证
 
 ```dart
-    void geeTestCustomApi1() async {
-      // 初始化极验
-      bool initSuccess = await FlutterGeetest.initGeeTest(customSecondaryValidate: false);
-      if (initSuccess == false) {
-        print('初始化极验失败');
-        return;
-      }
-
-      // 请求自己服务器的api1接口
-      Map<String, dynamic> api1Result = await api1();
-      if (api1Result['success'] != 1) {
-        print('验证失败！api1未通过');
-        return;
-      }
-
-      // 自定义配置极验
-      bool configSuccess = await FlutterGeetest.configureGeeTest(api1Result['gt'], api1Result['challenge'], api1Result['success'].toString(), api2: 'http://www.geetest.com/demo/gt/validate-slide');
-      if (configSuccess == false) {
-        print('极验自定义配置失败');
-        return;
-      }
-
-      var api2Result = await FlutterGeetest.startGTCaptcha();
-      print(api2Result);
-      if (api2Result['status'] == 'success') {
-        print("验证成功 $api2Result");
-      } else {
-        print('验证失败！二次验证未通过');
-      }
-    }
+  /// api1结果参数+api2
+  void _launchGeetest4() {
+    api1().then((data){
+      FlutterGeetest.launchGeetest(
+        gt: data['gt'],
+        challenge: data['challenge'],
+        success: data['success'],
+        api2: 'https://www.geetest.com/demo/gt/validate-slide',
+      ).then((data) {
+        print('Flutter_GeetestPlugin: data====>$data');
+        if (data["data"] == null) {
+          String errormsg = data["msg"];
+          _showSnackbarMsg('$errormsg');
+          return;
+        }
+        var result = data["data"];
+        _showSnackbarMsg('$result');
+      });
+    });
+  }
 ```
 
 ## 自定义 二次验证，使用默认注册步骤
 
 ```dart
-    void geeTestCustomApi2() async {
-      // 初始化极验
-      bool initSuccess = await FlutterGeetest.initGeeTest(api1: 'http://www.geetest.com/demo/gt/register-slide', customRegisterAPI: false);
-      if (initSuccess == false) {
-        print('初始化极验失败');
+  /// 仅api1 , 返回结果自行进行二次接口校验
+  void _launchGeetest1() {
+    FlutterGeetest.launchGeetest(
+      api1: 'https://www.geetest.com/demo/gt/register-slide',
+    ).then((data) {
+      print('Flutter_GeetestPlugin: data====>$data');
+      if (data["data"] == null) {
+        String errormsg = data["msg"];
+        _showSnackbarMsg('$errormsg');
         return;
       }
-
-      Map<dynamic, dynamic> api2Data = await FlutterGeetest.startGTCaptcha();
-      print('极验返回api2需要的基本参数 $api2Data');
-
-      if (api2Data == null) {
-        print('验证失败！行为验证未通过');
-        return;
-      }
-
-      // 请求自己服务器的api2接口进行二次验证
-      var api2Result = await api2(api2Data);
-
-      if (api2Result['status'] == 'success') {
-        print("验证成功 $api2Result");
-      } else {
-        print('验证失败！二次验证未通过');
-      }
-    }
+      api2(data["data"]).then((data){
+        print("api2: $data");
+        _showSnackbarMsg('$data');
+      });
+    });
+  }
 ```
 
 ## 自定义 注册 和 二次验证
 
 ```dart
-    // 自定义 一次验证 和 二次验证
-    void geeTestCustomApi1AndApi2() async {
-      // 初始化极验
-      bool initSuccess = await FlutterGeetest.initGeeTest();
-      if (initSuccess == false) {
-        print('初始化极验失败');
-        return;
-      }
-
-      // 请求自己服务器的api1接口
-      Map<String, dynamic> api1Result = await api1();
-      if (api1Result['success'] != 1) {
-        print('验证失败！api1未通过');
-        return;
-      }
-
-      // 自定义配置极验
-      bool configSuccess = await FlutterGeetest.configureGeeTest(api1Result['gt'], api1Result['challenge'], api1Result['success'].toString(), );
-      if (configSuccess == false) {
-        print('极验自定义配置失败');
-        return;
-      }
-
-      // 调用极验验证界面开始验证
-      Map<dynamic, dynamic> api2Data = await FlutterGeetest.startGTCaptcha();
-      print('极验返回api2需要的基本参数 $api2Data');
-
-      if (api2Data == null) {
-        print('验证失败！行为验证未通过');
-        return;
-      }
-
-      // 请求自己服务器的api2接口进行二次验证
-      var api2Result = await api2(api2Data);
-
-      if (api2Result['status'] == 'success') {
-        print("验证成功 $api2Result");
-      } else {
-        print('验证失败！二次验证未通过');
-      }
-    }
+  /// 仅api1结果参数(gt,challenge,success),参数来自于自行接口获取
+  void _launchGeetest2() {
+    api1().then((data){
+      print("!!!!! $data");
+      FlutterGeetest.launchGeetest(
+        gt: data['gt'],
+        challenge: data['challenge'],
+        success: data['success'],
+      ).then((data) {
+        print('Flutter_GeetestPlugin: data====>$data');
+        if (data["data"] == null) {
+          String errormsg = data["msg"];
+          _showSnackbarMsg('$errormsg');
+          return;
+        }
+        api2(data["data"]).then((data){
+          print("api2: $data");
+          _showSnackbarMsg('$data');
+        });
+      });
+    });
+  }
 ```
