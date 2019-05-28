@@ -54,7 +54,13 @@ class _MyAppState extends State<MyApp> {
         _showSnackbarMsg('$errormsg');
         return;
       }
-      api2(data["data"]).then((data){
+      var respData;
+      if (data["data"] is Map) {
+        respData = data["data"];
+      } else {
+        respData = jsonDecode(data["data"]);
+      }
+      api2(respData).then((data) {
         print("api2: $data");
         _showSnackbarMsg('$data');
       });
@@ -76,7 +82,13 @@ class _MyAppState extends State<MyApp> {
           _showSnackbarMsg('$errormsg');
           return;
         }
-        api2(data["data"]).then((data){
+        var respData;
+        if (data["data"] is Map) {
+          respData = data["data"];
+        } else {
+          respData = jsonDecode(data["data"]);
+        }
+        api2(respData).then((data){
           print("api2: $data");
           _showSnackbarMsg('$data');
         });
